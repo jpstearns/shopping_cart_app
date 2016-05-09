@@ -7,23 +7,194 @@
 
 <!-- =======================================================================  =>
 *                                                                              *
-*    Blog: Project 2                                                           *
+*    Shopping Cart App: Project 3                                                         *
 *    COMI 2010 Client-Side Scripting Languages                                 *
-*    03-09-2016                                                                *
+*    05-08-2016                                                                *
 *                                                                              *
 *    JP Stearns                                                                *
 *                                                                              *
 *    index.html                                                                *
 *                                                                              *
-*    Blog: XHTML page for Project 2                                             *
+*    Shopping Cart App: XHTML page for Project 3                                             *
 *                                                                              *
 <=  ======================================================================== -->
-<title>Web Development Blog</title>
+<title>Frusciante Guitars</title>
 <link rel="stylesheet" type="text/css" href="styles.css"/>
-<script type="text/javascript", src="scripts.js"></script>
-<link rel="icon" type="image/png" href="assets/images/jp.png" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<header>
+		<a href="index.html">Home</a>
+		<a href="cart.html">Shopping Cart</a>
+		<br>
+		<div id="home">
+			<h1>Frusciante Guitars</h1>
+			<p> Our company provides you with the ability to duplicate the sound of one of the greatest guitar players to ever live.
+				Voted the Greatest Guitarist in the last 50 years John Frusciante has really made a name for himself, and now today you
+				can purchase his Guitar, Effects Pedal Board, and his Amplifier inorder to really duplicate his sound. Don't miss this chance
+				today to have a cloned setup of your favorite musician!
+			</p>
+		</div>
+	</header>
+	<div class="wrapper">	
+		<section id="content">
+			<h2>The Guitar</h2>
+			<div class="image">
+				<img src="guitar.jpg" class="thumbnail">
+				<h1 style="color:white"> Fender Strat</h1>
+			</div>
+			<p>A Vintage 1969 Fender Tobaccoo Stained Stratacastor with Authentic plectorum damage and the same Elixor Strings.</p>
+			<ul>
+				<li>$2,000</li>
+				<li><button id="guitarButton">View Item</button></li>
+				<li>Qty:&nbsp;<input type="number" id="guitarQty"></li>
+				<li><button onclick="addGuitar()">Add To Cart</button></li>
+			</ul>
+			<!-- The Modal -->
+			<div id="guitarModal" class="modal">
+
+			  <!-- Modal content -->
+			  <div class="modalContent center">
+			  	<div style="background-color:#fff">
+				    <span class="close">x</span>
+				    <h1> Frusciantes Stratocastor Guitar</h1>
+				    <a href="cart.html">Shopping Cart</a>	
+				    <div id="container2">
+						<div id="container1">
+								<div id="col1">
+									<img src="playguitar.gif" onmouseover="scaleGuitar(2)" onmouseout="scaleGuitar(.5)" id="guitarImg">
+								</div>
+								<div id="col2">
+									<ul class="tabs">
+										<li><a onclick="showGdescription()" id="guitarDlink">Description</a></li>
+										<li><a onclick="showGspecs()" id="guitarSlink">Specs</a></li>
+									</ul>
+									<div id="guitardescription">
+										<p>The American Special Stratocaster puts U.S-made Fender quality into the hands of players at any level. For the guitarist who wants a combination of timeless Fender style and contemporary features, this guitar delivers traditional Strat® design with some extra elements for modern tone and performance, including Texas Special™ pickups and special circuitry, modern neck profile and fingerboard radius, and more. Great sounding, great looking and feeling, and made in the United States.</p>
+									</div>
+									<div id="guitarspecs">
+										<ul>
+											<li>Maple neck with "C" profile and "large" headstock</li>
+											<li>9.5"-radius maple fingerboard with 22 jumbo frets</li>
+											<li>Three Texas Special™ single-coil Stratocaster pickups</li>
+										</ul>
+									</div>
+									<div style="margin-bottom: 15px;">
+										Qty. &nbsp;<input type="number" id="guitarQty">
+										<button onclick="addGuitar()">Add To Cart</button>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			</div>
+		</section>
+		
+		<section id="middle">
+			<h2>The Pedal Board</h2>
+			<div class="image">
+				<img src="pedalboard.jpg" class="thumbnail">
+				<h1 style="color:white"> Rockin Effects</h1>
+			</div>
+			<p>An exact replica of John Frusciante's Pedal Board complete with the Boss Chorus Effect and the Digitect Volume Pedal</p>
+			<ul>
+				<li>$2,000</li>
+				<li><button id="pedalButton">View Item</button></li>
+				<li>Qty:&nbsp;<input type="number" id="pedalQty"></li>
+				<li><button onclick="addPedal()">Add To Cart</button></li>
+			</ul>
+
+			<div id="pedalModal" class="modal">
+
+			  <!-- Modal content -->
+			  <div class="modalContent center">
+			  	<div style="background-color:#fff">
+				    <span class="close">x</span>
+				    <h1> Frusciantes Elite Effects Pedal Board</h1>
+				    <a href="cart.html">Shopping Cart</a>
+				    <div id="container2">
+						<div id="container1">
+								<div id="col1">
+									<img src="playpedal.jpg" onmouseover="scalePedal(2)" onmouseout="scalePedal(.5)" id="pedalImg">
+								</div>
+								<div id="col2">
+									<ul class="tabs">
+										<li><a onclick="showPdescription()" id="pedalDlink">Description</a></li>
+										<li><a onclick="showPspecs()" id="pedalSlink">Specs</a></li>
+									</ul>
+									<div id="pedaldescription">
+										<p>Novo means new beginning in Latin, and Pedaltrain' Novo Series five-rail pedal boards are exactly that, a fresh redesign of their market-leading pedal board design. Thanks to Pedaltrain' modified rail system and open front design, mounting pedals and power supplies is easier than ever. Even the smallest pedals make an incredibly strong bond with this rail system. Novo 18' five-rail design is perfect for players who use true-bypass switchers or need an extra rail to accommodate a variety of pedal configurations. And as always, Novo 18 is made with Pedaltrain' signature featherweight aircraft-grade aluminum.</p>
+									</div>
+									<div id="pedalspecs">
+										<ul>
+											<li>36 different pedals used by Frusciante on tour</li>
+											<li>21.1 gigawatts of internal power revenue</li>
+											<li>Three Texas Special™ single-coil boss drive effect</li>
+										</ul>
+									</div>
+									<div style="margin-bottom: 15px;">
+										Qty. &nbsp;<input type="number" id="pedalQty">
+										<button onclick="addPedal()">Add To Cart</button>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<aside id="sidebar">
+			<h2>The Amp</h2>
+			<div class="image">
+				<img src="amp.jpg" class="thumbnail">
+				<h1 style="color:white"> 69 Twin Reverb</h1>
+			</div>
+			<p>The 1969 Fender Twin Reverb Amplifier for that clean frusicante melodic tone that he is so well know for.</p>
+			<ul>
+				<li>$2,000</li>
+				<li><button class="ampButton">View Item</button></li>
+				<li>Qty:&nbsp;<input type="number" id="ampQty"></li>
+				<li><button onclick="addAmp()">Add To Cart</button></li>
+			</ul>
+			<div id="ampModal" class="modal">
+
+			  <!-- Modal content -->
+			  <div class="modalContent center">
+			  	<div style="background-color:#fff">
+				    <span class="close">x</span>
+				    <h1> Frusciantes Fender Twin Reverb</h1>
+				    <a href="cart.html">Shopping Cart</a>
+				    <div id="container2">
+						<div id="container1">
+								<div id="col1">
+									<img src="playamp.jpg" onmouseover="scaleAmp(2)" onmouseout="scaleAmp(.5)" id="ampImg">
+								</div>
+								<div id="col2">
+									<ul class="tabs">
+										<li><a onclick="showAdescription()" id="ampDlink">Description</a></li>
+										<li><a onclick="showAspecs()" id="ampSlink">Specs</a></li>
+									</ul>
+									<div id="ampdescription">
+										<p>Plug into the Fender '65 Twin Reverb combo amplifier and experience legendary tube tone plus vintage-amp vibe. The '65 Twin Reverb provides plenty of clean headroom, thanks to its robust 85 watts of 6L6-fired output and a pair of genuine Jensen speakers. A standout Fender classic, this combo includes Normal and Vibrato channels - perfect for rock, surf, country, and more. Players at Sweetwater love the way the Twin takes guitar pedals, expanding this amplifier's versatility. Tilt-back legs and a handy 2-button footswitch for reverb and vibrato come standard with the gig-ready '65 Twin Reverb.</p>
+									</div>
+									<div id="ampspecs">
+										<ul>
+											<li>Vintage Reissue Series tube amp</li>
+											<li>85 watts into 4 ohms</li>
+											<li>2 x 12" Jensen speakers</li>
+										</ul>
+									</div>
+									<div style="margin-bottom: 15px;">
+										Qty. &nbsp;<input type="number" id="ampQty">
+										<button onclick="addAmp">Add To Cart</button>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+		</aside>
+		<a href="cart.html">Shopping Cart</a>
+	</div>
+
+<script type="text/javascript", src="scripts.js"></script>
 </body>
